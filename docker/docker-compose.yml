@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bear-postgres:
+    container_name: "bear-postgres"
+    image: postgres:10
+    restart: always
+    environment:
+      POSTGRES_DB: bear
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
