@@ -5,5 +5,6 @@ public enum Category {
 
     HISTORY,
     ROMANTIC,
-    CRIMI
+    CRIMI,
+    FANTASY
 }

@@ -1,7 +1,9 @@
 package io.lombocska.bear.domain.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.CascadeType;
@@ -20,6 +22,8 @@ import java.util.UUID;
 @Table
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Writer {
 
     @Id

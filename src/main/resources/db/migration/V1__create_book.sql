@@ -1,6 +1,5 @@
 CREATE TABLE book(
     id uuid NOT NULL,
-    name varchar(255) NOT NULL,
     title varchar(255) NOT NULL,
     created_at timestamp NOT NULL,
     sold bigint NOT NULL,
@@ -8,7 +7,7 @@ CREATE TABLE book(
     category varchar(255) NOT NULL,
     description varchar(1000) NOT NULL,
     CONSTRAINT pk_book PRIMARY KEY (id),
-    CONSTRAINT uc_book_writer_id_name UNIQUE(writer_id, name)
+    CONSTRAINT uc_book_writer_id_name UNIQUE(writer_id, title)
 );
 
 CREATE TABLE writer(

@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.UUID;
 
 
@@ -25,7 +25,7 @@ public class BookDTO {
     private String title;
 
     @NonNull
-    private LocalDateTime createdAt;
+    private Instant createdAt;
 
     @NonNull
     private Long sold;

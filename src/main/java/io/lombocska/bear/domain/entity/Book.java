@@ -16,7 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.UUID;
 
 @Data
@@ -35,7 +35,7 @@ public class Book {
     private String title;
 
     @NonNull
-    private LocalDateTime createdAt;
+    private Instant createdAt;
 
     @NonNull
     private Long sold;
