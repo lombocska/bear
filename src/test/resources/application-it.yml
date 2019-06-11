@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: bear-test
+  datasource:
+    url: jdbc:postgresql://${IT-POSTGRES_HOST:localhost}:${IT-POSTGRES_PORT:5432}/${IT-POSTGRES_NAME:bear}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASS:postgres}
+    driverClassName: org.postgresql.Driver
+    initialization-mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    show-sql: false
+    hibernate:
+      ddl-auto: validate
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      jdbc:
+        lob:
+          non_contextual_creation: true
+    properties:
+      hibernate:
+        hbm2ddl.import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
+        temp:
+          use_jdbc_metadata_defaults: false
+  kafka:
+    producer:
+      bootstrap-servers: ${IT-KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+      transaction-id-prefix: test-tx-${spring.application.name}
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+      acks: all
+logging:
+  level:
+    io.bear: ${LOG_LEVEL_BEAR:DEBUG}
+
+bear:
+  kafka:
+    domain-event-topic: it-book-domain-event
