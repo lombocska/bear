@@ -31,7 +31,7 @@ spring:
       acks: all
 logging:
   level:
-    io.bear: ${LOG_LEVEL_BEAR:DEBUG}
+    io.lombocska.bear: ${LOG_LEVEL_BEAR:DEBUG}
 
 bear:
   kafka:

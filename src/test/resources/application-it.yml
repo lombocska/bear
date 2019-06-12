@@ -29,9 +29,17 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
       acks: all
+    consumer:
+      group-id: ${spring.application.name}-${random.int}
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      auto-offset-reset: latest
+      enable-auto-commit: true
+      properties:
+        isolation.level: read_committed
+      client-id: ${spring.application.name}-${random.int}
 logging:
   level:
-    io.bear: ${LOG_LEVEL_BEAR:DEBUG}
+    io.lombocska.bear: ${LOG_LEVEL_BEAR:DEBUG}
 
 bear:
   kafka:

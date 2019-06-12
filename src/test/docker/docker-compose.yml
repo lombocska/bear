@@ -34,6 +34,6 @@ services:
     links:
       - it-zookeeper:it-zookeeper
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: it-kafka
+      KAFKA_ADVERTISED_HOST_NAME: localhost
       KAFKA_ADVERTISED_PORT: 9092
       KAFKA_ZOOKEEPER_CONNECT: it-zookeeper:2181

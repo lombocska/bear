@@ -35,7 +35,7 @@ public class KafkaDispatcher {
 
     private void send(String topicToSend, BearDomainEvent event) {
         kafkaTemplate.send(topicToSend, event.getAggregationId(), serializeDomainEvent(event));
-        log.debug("DomainEvent sent: {} to the topic: {}", event, topicToSend);
+        log.debug("DomainEvent sent: {} to the topic: {}", event.toString(), topicToSend);
     }
 
     private byte[] serializeDomainEvent(final DomainEvent<?> event) {
